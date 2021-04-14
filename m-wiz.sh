@@ -1,217 +1,398 @@
-#!/usr/bin/env python
-#-*- coding: iso-8859-1 -*-
-import getopt
-import time
-import os
-import sys
-import datetime
-from random import randint
+#SCRIPT BY N17R0 DONT TRY TO COPY OR MODIFY 
+#M-WIZ TOOL FOR ALL METASPLOIT THINGS
+#data/data/com.termux/files/usr/bin/bash
+#colours
+check(){
+if wget --spider https://raw.githubusercontent.com/noob-hackers/m-wiz/master/update.v1.4 2>/dev/null; then
+cd $HOME/m-wiz/core/upd
+echo "meta" > update.txt
+else
+echo
+fi
+}
+check
+option(){
+if [ -f "$HOME/m-wiz/core/upd/update.txt" ];then
+cd $HOME/m-wiz/core/upd
+bash update.sh
+else
+echo " "
+fi
+}
+option
+check1(){
+if wget --spider https://raw.githubusercontent.com/noob-hackers/patchupdateznh/main/m-wiz.v.1 2>/dev/null; then
+cd $HOME/m-wiz/core/upd
+echo "meta" > patch.txt
+else
+echo
+fi
+}
+check1
+option1(){
+if [ -f "$HOME/m-wiz/core/upd/patch.txt" ];then
+cd $HOME/m-wiz/core/upd
+bash patch.sh
+else
+echo " "
+fi
+}
+option1
+red='\033[1;31m'
+rset='\033[0m'
+grn='\033[1;32m'
+ylo='\033[1;33m'
+blue='\033[1;34m'
+cyan='\033[1;36m'
+pink='\033[1;35m'
+#coding section starts :)
+clear
+echo " "
+echo " "
+echo -e "$red
+                       ███╗   ███╗      ██╗    ██╗██╗███████╗
+                       ████╗ ████║      ██║    ██║██║╚══███╔╝
+                       ██╔████╔██║█████╗██║ █╗ ██║██║  ███╔╝ 
+                       ██║╚██╔╝██║╚════╝██║███╗██║██║ ███╔╝  
+                       ██║ ╚═╝ ██║      ╚███╔███╔╝██║███████╗
+                       ╚═╝     ╚═╝       ╚══╝╚══╝ ╚═╝╚══════╝ 
+                                                   v 1.3$rset"
+echo " "                                                          
+echo -e "$red                                ▶ Coded by$grn Lovepreet Singh $red ◀$rset"
+echo -e "$red                                ⫸$ylo Technical Mundeer $red ⫷$rset"
+echo -e "$red                          ⫸$grn https://m.youtube.com/c/technicalmundeer $red⫷$rset"
+echo " "
+echo " "
+echo -e "$pink                       >>>  [ click ENTER to continue ] <<<$rset"
+read nitrom
+echo " "
+echo " "
+echo -e "$cyan                  》m-wiz is a official tool made for metasploit《$rset"
+echo " "
+echo -e "$red                          [NOTE:- NEED INTERNET CONNECTION]$rset"
+echo " "
+echo " "
+echo -e "$grn             ＞＞＞＞＞＞＞＞＞＞$ylo [OPTIONS]$grn ＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo " "
+echo -e "$red                             ➡$cyan [1] Metasploit install"
+echo -e "$red                             ➡$cyan [2] Metasploit repair"
+echo -e "$red                             ➡$cyan [3] Metasploit backup"
+echo -e "$red                             ➡$cyan [4] Metasploit restore"
+echo -e "$red                             ➡$cyan [5] Metasploit delete"
+echo -e "$red                             ➡$cyan [6] Update"
+echo -e "$red                             ➡$cyan [7] About" 
+echo -e "$red                             ➡$cyan [8] Subscribe"
+echo -e "$red                             ➡$cyan [9] Chat Now"
+echo -e "$red                             ➡$cyan [10] Follow"
+echo -e "$red                             ➡$cyan [11] Exit"
 
-version = "1.0.0"
-#Mensaje
-os.system ("clear")
-print("\033[1;32m+\033[1;36m LIVE-GENERATOR")
-time.sleep(1.2)
-#Informacion de ayuda
-def dexter1999():
-    print("\033[1;32m             ______________")
-    print("\033[1;32m       ,===:'.,            `-._")
-    print("\033[1;32m           `:.`---.__         `-._")
-    print("\033[1;32m             `:.     `--.         `.")
-    print("\033[1;32m               \.        `.         `.")
-    print("\033[1;32m       (,,(,    \.         `.   ____,-`.,")
-    print("\033[1;32m     (,'     `/   \.   ,--.___`.'")
-    print("\033[1;32m ,  ,'  ,--.  `,   \.;'         `")
-    print("\033[1;32m `{D, {    \  :    \;")
-    print("\033[1;32m   V,,'    /  /    //")
-    print("\033[1;32m   j;;    /  ,' ,-//.    ,---.      ,")
-    print("\033[1;32m   \;'   /  ,' /  _  \  /  _  \   ,'/")
-    print("\033[1;32m         \   `'  / \  `'  / \  `.' /")
-    print("\033[1;32m          `.___,'   `.__,'   `.__,'")
-dexter1999()
-time.sleep(1.2)
-print("")
-print("\033[1;32m Informatic in Termux")
-print("")
-time.sleep(1.6)
-print(" https://t.me/Informatic_in_Termux")
-print("")
-time.sleep(2.2)
+echo " "
+echo " "
+echo -e "$grn             ＞＞＞＞＞＞＞＞＞＞$ylo [SELECT]$grn ＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        [[[$ylo Select any option$cyan]]]$rset"
+echo " "
+read n
+case "$n" in
+1)echo " "
+echo " "
+echo " "
+echo -e "$red                         You are going to$grn Install$red Metasploit$rset"
+echo " "
+echo -e "$grn                               Press$ylo ENTER$red to continue$rset"
+echo " "
+read hulke
+cd $HOME/m-wiz/core/min
+echo " "
+echo -e "$ylo         To terminate the process click$red 't'$ylo or to continue click on$grn ENTER$rset" 
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                           Are you sure? Press$grn ENTER$red to exit$rset"
+read hulkee
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+bash metain.sh
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                       click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
 
-
-#Informacion de ayuda
-def usage():
-    print("+\033[1;37m Metodo de uso\033[1;31m +")
-    print("")
-    print("\033[1;33m  python2 Live-Generator.py -b \033[1;31m >>>\033[1;33m Opciones de uso")
-    print("\033[1;33m  python2 Live-Generator.py -h \033[1;31m >>>\033[1;33m Mensaje de ayuda")
-    print("")
-    print("+\033[;32m Opciones de uso\033[1;31m +")
-    print("")
-    print("\033[1;32m -b, \033[1;31m >>>\033[1;32m -bin\033[1;31m >>>\033[1;32m Formato de bin")
-    print("\033[1;32m -u, \033[1;31m >>>\033[1;32m -cantidad\033[1;31m >>>\033[1;32m tarjetas a generar")
-    print("\033[1;32m -c, \033[1;31m >>>\033[1;32m -ccv\033[1;31m >>>\033[1;32m Genera ccv al azar")
-    print("\033[1;32m -d, \033[1;31m >>>\033[1;32m -date\033[1;31m >>>\033[1;32m Genera fechas al azar")
-    print("")
-    print("+\033[;33m Ejemplo de uso\033[1;31m +")
-    print("")
-    print("\033[1;37m EL USO DE ESTA HERRAMIENTA\033[0m")
-    print("\033[1;37m ES RESPONSABILIDAD DE QUIEN LA UTILICE")
-    print("")
-    print("\033[1;36mpython2 Live-Generator.py -b 123456xxxxxxxxxx -u 30 -d -c ")
-    print("")
-#Arg parser
-def parseOptions(argv):
-    bin_format = ""
-    saveopt = False
-    limit = 30
-    ccv = False
-    date = False
-    check = False
-
-    try:
-        opts, args = getopt.getopt(argv, "h:b:u:gcd",["help", "bin", "guardar", "cantidad", "ccv", "date"])
-        for opt, arg in opts:
-            if opt in ("-h"):
-                usage()
-                sys.exit()
-            elif opt in ("-b", "-bin"):
-                bin_format = arg
-            elif opt in ("-g", "-guardar"):
-                saveopt = True
-            elif opt in ("u", "-cantidad"):
-                limit = arg
-            elif opt in ("-c", "-ccv"):
-                ccv = True
-            elif opt in ("-d", "-date"):
-                date = True
-
-        return(bin_format, saveopt, limit, ccv, date)
-
-    except getopt.GetoptError:
-        usage()
-        sys.exit(2)
-
-#CHECKER BASADO EN ALGORITMO LUHN
-def cardLuhnChecksumIsValid(card_number):
-    """ checks to make sure that the card passes a luhn mod-10 checksum """
-
-    sum = 0
-    num_digits = len(card_number)
-    oddeven = num_digits & 1
-
-    for count in range(0, num_digits):
-        digit = int(card_number[count])
-
-        if not (( count & 1 ) ^ oddeven ):
-            digit = digit * 2
-        if digit > 9:
-            digit = digit - 9
-
-        sum = sum + digit
-
-    return ( (sum % 10) == 0 )
-
-#GENERA UNA BASE DE BIN XXXXXXXXXXXXXXXX
-def ccgen(bin_format):
-    out_cc = ""
-    if len(bin_format) == 16:
-        #Iteration over the bin
-        for i in range(15):
-            if bin_format[i] in ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"):
-                out_cc = out_cc + bin_format[i]
-                continue
-            elif bin_format[i] in ("x"):
-                out_cc = out_cc + str(randint(0,9))
-            else:
-                print("\nCaracter no valido en el formato: {}\n".format(bin_format))
-                print("El formato del bin es: xxxxxxxxxxxxxxxx de 16 digitos\n")
-                print("Ayuda: python2 Live-Generator.py -h \n")
-                sys.exit()
-
-        #Generate checksum (last digit) -- IMPLICIT CHECK
-        for i in range(10):
-            checksum_check = out_cc
-            checksum_check = checksum_check + str(i)
-
-            if cardLuhnChecksumIsValid(checksum_check):
-                out_cc = checksum_check
-                break
-            else:
-                checksum_check = out_cc
-
-    else:
-        print("\033[1;32m")
-        print("\nERROR: Inserta un bin valido\n")
-        print("SOLUCION: El formato del bin es: xxxxxxxxxxxxxxxx de 16 digitos\n")
-        print("AYUDA: python2 Live-Generator.py -h\n")
-        sys.exit()
-
-    return(out_cc)
-
-#Write on a file that takes a list for the argument
-def save(generated):
-    now = datetime.datetime.now()
-    file_name = "cc-gen_output_{0}.txt".format(str(now.day) + str(now.hour) + str(now.minute) + str(now.second))
-    f = open(file_name, 'w')
-    for line in generated:
-        f.write(line + "\n")
-    f.close
-
-#Random ccv gen
-def ccvgen():
-    ccv = ""
-    num = randint(10,999)
-
-    if num < 100:
-        ccv = "0" + str(num)
-    else:
-        ccv = str(num)
-
-    return(ccv)
-
-#Random exp date
-def dategen():
-    now = datetime.datetime.now()
-    date = ""
-    month = str(randint(1, 12))
-    current_year = str(now.year)
-    year = str(randint(int(current_year[-2:]) + 1, int(current_year[-2:]) + 6))
-    date = month + "|" + year
-
-    return date
-
-#The main function
-def main(argv):
-    bin_list = []
-    #get arg data
-    (bin_format, saveopt, limit, ccv, date) = parseOptions(argv)
-    if bin_format is not "":
-        for i in range(int(limit)):
-            if ccv and date:
-                bin_list.append(ccgen(bin_format) + "|" + ccvgen() + "|" + dategen())
-                print(bin_list[i])
-            elif ccv and not date:
-                bin_list.append(ccgen(bin_format) + "|" + ccvgen())
-                print(bin_list[i])
-            elif date and not ccv:
-                bin_list.append(ccgen(bin_format) + "|" + dategen())
-                print(bin_list[i])
-            elif not date and not ccv:
-                bin_list.append(ccgen(bin_format))
-                print(bin_list[i])
-
-        if not bin_list:
-            print("\nERROR: el bin que insertaste no es valido\n")
-        else:
-            print("\n Todas las tarjetas fueron validadas con exito ")
-            print("\n Pueden ser usadas satisfactoriamente")
-
-        if saveopt:
-            save(bin_list)
-    else:
-        usage()
-        sys.exit()
-
-if __name__ == '__main__':
-    main(sys.argv[1:])
+2)echo " "
+echo " "
+echo " "
+echo -e "$red                          You are going to$grn Repair$red Metasploit$rset "
+echo " "
+echo -e "$grn                                Press$ylo ENTER$grn to continue$rset"
+echo " "
+read nitro
+cd $HOME/m-wiz/core/mrp
+echo " "
+echo -e "$ylo         To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                          Are you sure? Press$grn ENTER$red to exit$rset"
+read nitroo
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+bash metarpir.sh
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                      click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+3)echo " "
+echo " "
+echo " "
+echo -e "$red                         You are going to$grn Back up$red Metasploit$rset "
+echo " "
+echo -e "$grn                                 Press$ylo ENTER$grn to continue$rset"
+echo " "
+read mon
+cd $HOME/m-wiz/core/mbp
+echo " "
+echo -e "$ylo         To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                         Are you sure? Press$grn ENTER$red to exit$rset"
+read monn
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+bash backup.sh
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+4)echo " "
+echo " "
+echo " "
+echo -e "$red                         You are going to$grn Restore$red Metasploit$rset "
+echo " "
+echo -e "$grn                                 Press$ylo ENTER$grn to continue$rset"
+echo " "
+read gzil
+cd $HOME/m-wiz/core/mrs
+echo " "
+echo -e "$ylo         To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                          Are you sure? Press$grn ENTER$red to exit$rset"
+read gzill
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+bash restore.sh
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+5)echo " "
+echo " "
+echo " "
+echo -e "$red                         You are going to$grn Delete$red Metasploit$rset "
+echo " "
+echo -e "$grn                                  Press$ylo ENTER$grn to continue$rset"
+echo " "
+read kong
+cd $HOME/m-wiz/core/del
+echo " "
+echo -e "$ylo          To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                           Are you sure? Press$grn ENTER$red to exit$rset"
+read kongg
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+bash delete.sh
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+6)echo " "
+echo " "
+echo " "
+echo -e "$red                          You are going to$grn UPDATE$red script$rset"
+echo " "
+echo -e "$grn                             Press$ylo ENTER$grn to continue$rset"
+echo " "
+read gidor
+cd $HOME/m-wiz/core/upd
+echo " "
+echo -e "$ylo            To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                         Are you sure? Press$grn ENTER$red to exit$rset"
+read gidora
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+bash delete.sh
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+7)echo " "
+echo " "
+echo " "
+echo -e "$red                          You are going to$grn ABOUT$red script$rset"
+echo " "
+echo -e "$grn                              Press$ylo ENTER$grn to continue$rset"
+echo " "
+read nit
+cd $HOME/m-wiz/core/abt
+echo " "
+echo -e "$ylo            To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                       Are you sure? Press$grn ENTER$red to exit$rset"
+read nitt
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+bash update.sh
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+8)echo " "
+echo " "
+echo " "
+echo -e "$red                           You are going to$grn SUBSCRIBE$red Metasploit$rset "
+echo " "
+echo -e "$grn                                   Press$ylo ENTER$grn to continue$rset"
+echo " "
+read sim
+echo " "
+echo -e "$ylo            To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                      Are you sure? Press$grn ENTER$red to exit$rset"
+read simm
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+am start -a android.intent.action.VIEW -d https://m.youtube.com/c/technicalmundeer
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+9)echo " "
+echo " "
+echo " "
+echo -e "$red                          You are going to$grn CHAT$red Script$rset "
+echo " "
+echo -e "$grn                             Press$ylo ENTER$grn to continue$rset"
+echo " "
+read burritos
+echo " "
+echo -e "$ylo            To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                      Are you sure? Press$grn ENTER$red to exit$rset"
+read nitrooz
+cd $HOME/m-wiz
+bash m-wiz.sh
+else
+am start -a android.intent.action.VIEW -d https://telegram.me/technical_mundeer
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+10)echo " "
+echo " "
+echo " "
+echo -e "$red                           You are going to$grn Follow$red$rset "
+echo " "
+echo -e "$grn                           Press$ylo ENTER$grn to Continue$rset"
+echo " "
+read sim
+echo " "
+echo -e "$ylo            To terminate the process click$red 't' $ylo or to continue click on$grn ENTER$rset"
+read choice
+if [[ $choice = 't' ]] ; then
+echo -e "$red                      Are you sure? Press$grn ENTER$red to exit$rset"
+read simm
+cd $HOME/m-wiz
+bash m-wiz.sh 
+else
+am start -a android.intent.action.VIEW -d https://www.instagram.com/lovely_singh__kahlon
+echo " "
+echo " "
+echo -e "$grn               ＞＞＞＞＞＞＞＞＞＞＞$ylo [EXIT]$grn ＜＜＜＜＜＜＜＜＜＜＜＜$rset"
+echo " "
+echo -e "$cyan                        click$grn ENTER$cyan to go back into m-wiz menu$rset"
+echo " "
+read punch
+fi
+cd $HOME/m-wiz
+bash m-wiz.sh ;;
+10)
+sleep 2.0
+clear
+echo " "
+echo -e "$grn
+                       ____  _  _  ____    ____  _  _  ____ 
+                      (  _ \( \/ )( ___)  (  _ \( \/ )( ___)
+                      ) _ < \  /  )__)    ) _ < \  /  )__) 
+                      (____/ (__) (____)  (____/ (__) (____)...$cyan have a awesome day$rset"
+echo " "
+echo " "
+exit 1
+esac;
